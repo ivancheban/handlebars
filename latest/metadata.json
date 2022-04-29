@@ -1,0 +1,155 @@
+{
+  "generated": "2022-04-15T09:24:10.437757+00:00",
+  "prefix": "2022-04-15T09-24-10-437757Z",
+  "samples": [
+    {
+      "id": "32f82cbb",
+      "status": "active",
+      "created": "2021-12-16T15:54:40+00:00",
+      "updated": "2022-03-24T12:04:40+00:00",
+      "title": "Equity Reference Data",
+      "description": "This query demonstrates how using a list of different identifier types and identifiers, the user can request:\n  * Instrument level reference data including:\n  * Swiss Stamp Tax Data\n  * Instrument Identifiers\n  * The name, and TRBC Scheme level 5 for the issuer of the instrument\n  * Identify the Valuation Quote (the quote used to calculate market capitalisation of the issue)\n  * Quote level reference data for all active quotes of the instrument including:\n  * The name of the exchange on which each quote trades\n  * The RIC of the quote\n",
+      "tags": [
+        "Equity",
+        "Reference",
+        "Swiss",
+        "Tax",
+        "Instrument",
+        "Identifiers"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Equity",
+      "use_cases": "normal",
+      "sample_url": "Equity_Reference_Data.json"
+    },
+    {
+      "id": "399871b8",
+      "status": "active",
+      "created": "2021-12-16T15:53:59+00:00",
+      "updated": "2022-03-24T12:04:40+00:00",
+      "title": "Geography PermIDs",
+      "description": "This query calls the Geography data model using the list of Geography PermIDs listed in Query Variables. The query returns all content items in the model:\n * AdminStatus\n * Identifier\n * Geography\n\n Additionally, three relationships are called:\n\n *CountryCapital* - which creates a new instance of the Geography\n                     data model, and requests the name of the resulting\n                     geograpghy PermID\n\n *CountryCurrency* - which creates a new instance of the Currency data\n                     model, and uses a filter to return the Iso4217 currency code.\n\n *GeospatialChildren* - which creates a new instance of the Geography data model\n                        and requests the names of the resulting children. This\n                        relationship is also used demonstrate how to return an\n                        array of the Geography PermIDs of the resulting children\n                        without linking to a new instance of the Geography data model.\n",
+      "tags": [
+        "AdminStatus",
+        "Identifier",
+        "Geography",
+        "Country"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Geography",
+      "use_cases": "normal",
+      "sample_url": "Geography_PermIDs.json"
+    },
+    {
+      "id": "d88fe1b6",
+      "status": "active",
+      "created": "2022-02-24T11:15:35+00:00",
+      "updated": "2022-03-29T09:41:01+00:00",
+      "title": "Government and Corporate Bond Reference Data",
+      "description": "This query demonstrates how using a list of different identifier types and identifiers, the user can request:\n  * Instrument level reference data including:\n  * Instrument Identifiers\n  * Coupon Schedule\n  * Amount Outstanding Schedlue sorted in descending effective date order\n  * Identify the Valuation Quote (the quote used to calculate market capitalisation of the issue)\n  * Quote level identifiers for all active quotes of the instrument\n  * The name, TRBC Scheme level 5, organizsation type, status, and ultimate parent ID for the issuer of the instrument\nThe query demonstrates how fields that contain enumerated values can be configured to return a human readable value rather than the enumeration Entitlements: To access the data returned by this query, the user account must have licences that include:\n  * Government and Corporate Bond Reference Data - PRS / FI_GOV_REFERENCE\n  * Organization Refence Data - PRS / BASIC_ENTITY\nThe query requests instrument identifiers associated with the instrument - if the instrument being queried  has a SEDOL or CUSIP, the Identifier will be suppressed unless the user has the appropriate licences (SYMBOLOGY / IDENTIFIER_TYPE_SEDOL and IDENTIFER_TYPE_SEDOL)\n",
+      "tags": [
+        "Government",
+        "Corporate",
+        "Reference",
+        "Instrument",
+        "Organization",
+        "Identifiers"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Reference Data",
+      "use_cases": "normal",
+      "sample_url": "GovernmentCorporateBond_Reference_Data.json"
+    },
+    {
+      "id": "9b79117d",
+      "status": "active",
+      "created": "2022-03-03T11:41:45+00:00",
+      "updated": "2022-04-15T07:46:16+00:00",
+      "title": "Open Organization with handlebars",
+      "description": "This query shows sample data for organization open fields.\n",
+      "tags": [
+        "Sample",
+        "Open",
+        "sampledata",
+        "GettingStarted"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Organization Reference",
+      "use_cases": "normal",
+      "sample_url": "Open_Organization_Sample.json"
+    },
+    {
+      "id": "62f07256",
+      "status": "active",
+      "created": "2022-02-24T11:15:35+00:00",
+      "updated": "2022-03-29T09:41:01+00:00",
+      "title": "Organization Reference Data",
+      "description": "This query demonstrates using a list of Legal Entity Identifiers to return Organization Reference Data:\n  * Demonstrates how the Domicile of the Organizartion can be represented by the name, and ISO 31661 Alpha 2 code\n  * The different styles of name and language that are available\n  * Business description (showing how to filter the result by specifying a language PermID 505062 - English)\n  * The identifiers associated with the organization (including Tax Ids, Company Registration Ids)\n  * The addresses and phone / fax numbers accociated with the organization\n  * Organization Reference Data\n  * TRBC and NAICS Classification Description and Scheme values\n  * Organizations related to the organization being queried. In this example, the query links to a child instance of the OrganizationReference model for the Registration Authority (where the user would have acess to all attributes in the data model), where as the Tax Authority, Primary Regulator, and Ultimate Parent of the organizartion are identified by their Organiz`tion PermIDs.` \nThe query demonstrates how fields that contain enumerated values can be configured to return a human readable value rather than the enumerated value. Each field that contains an enumerated value is followed by a request for the human readable value. Depending ono the nature of the content of the field, this human readable value is either a description, or a recognised identifier. The data returned is not exhaustive, but is intended to demonstrate what kind of data is available, how to apply filters to constrain the response where multiple records are returned, and how to expand enumerated values.\n",
+      "tags": [
+        "Organiztion",
+        "Reference",
+        "Classification",
+        "Identifiers"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Organization Reference",
+      "use_cases": "normal",
+      "sample_url": "OrganizationReference_Data.json"
+    },
+    {
+      "id": "9276b368",
+      "status": "active",
+      "created": "2022-03-22T13:48:46+00:00",
+      "updated": "2022-03-24T12:04:40+00:00",
+      "title": "Organization Open Fields",
+      "description": "This query demonstrates how the sample a list of different attributes and identifiers can be retrieved by a user for a an example Organization/Company.\n",
+      "tags": [
+        "Sample",
+        "Open",
+        "sampledata",
+        "GettingStarted"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Organization Reference",
+      "use_cases": "normal",
+      "sample_url": "Organization_Open_Fields.json"
+    },
+    {
+      "id": "899784d0",
+      "status": "active",
+      "created": "2022-03-16T15:40:12+00:00",
+      "updated": "2022-03-24T12:04:40+00:00",
+      "title": "Referebce Look-up Tables",
+      "description": "Referebce Look-up Tables for Fundamentals\n",
+      "tags": [
+        "Referebce",
+        "Look-up"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Fundamentals",
+      "use_cases": "normal",
+      "sample_url": "Referebce_Lookup_Tables.json"
+    },
+    {
+      "id": "302701bd",
+      "status": "active",
+      "created": "2021-12-14T11:21:21+00:00",
+      "updated": "2022-04-15T07:46:16+00:00",
+      "title": "Swiss Stamp Tax",
+      "description": "This query uses a list of GovCorpInstrument PermIDs, and uses the DerivedConentCovCorpBonds graphQl query to return the Swiss Stamp Tax data on those instruments\nThe query demonstrates how a user can provide a list of instrument identifiers in query variables rather than PermIDs.\n",
+      "tags": [
+        "PermID",
+        "GovCorpInstrument",
+        "Swiss",
+        "Stamp",
+        "Tax",
+        "Corporate",
+        "Bonds"
+      ],
+      "api_type": "GraphQL",
+      "content_set_type": "Financial Instruments",
+      "use_cases": "normal",
+      "sample_url": "SwissStampTax.json"
+    }
+  ]
+}

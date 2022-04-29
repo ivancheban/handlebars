@@ -1,0 +1,40 @@
+{
+  "id": "9276b368",
+  "name": "Organization_Open_Fields.json",
+  "title": "Organization Open Fields",
+  "description": "This query demonstrates how the sample a list of different attributes and identifiers can be retrieved by a user for a an example Organization/Company.\n",
+  "hierarchy": "Organization Reference",
+  "content_set_type": "Organization Reference",
+  "tags": [
+    "Sample",
+    "Open",
+    "sampledata",
+    "GettingStarted"
+  ],
+  "query": "query OrganizationQuery($OrganizationIds: [String!]) {\n  OrganizationReference(objectIds: $OrganizationIds) {\n    ObjectId\n    Names {\n      Name {\n        OrganizationName(filter: {AND: [{NameTypeCode: {EQ: \"LNG\"}}, {LanguageId: {EQ: \"505062\"}}]}) {\n          Name\n        }\n      }\n    }\n    OrganizationIncorporation_v2 {\n      Identifier {\n        Identifiers(filter: {ValueTypeId: {EQ: \"320135\"}}) {\n          Value\n        }\n      }\n    }\n    OrganizationDomicile_v2 {\n      Identifier {\n        Identifiers(filter: {ValueTypeId: {EQ: \"320135\"}}) {\n          Value\n        }\n      }\n    }\n    OrganizationIdentifiers(filter: {IdentifierTypeId_v2: {EQ: \"320634\"}}) {\n      IdentifierData {\n        Identifier\n      }\n    }\n    ClassificationTrbcPrimaryScheme_v2 {\n      TrbcSchemeParent {\n        TrbcSchemeParent {\n          TrbcSchemeParent {\n            TrbcSchemeParent {\n              ObjectId\n              Identifier {\n                Identifiers(filter: {ValueTypeId: {EQ: \"320159\"}}) {\n                  Value\n                }\n              }\n              Industry {\n                Names(filter: {AND: [{NameTypeId: {EQ: \"404500\"}}, {LanguageId: {EQ: \"505074\"}}]}) {\n                  Name\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+  "output_format": "handlebars",
+  "variables_definition": [
+    {
+      "name": "OrganizationIds",
+      "label": "Organization ID",
+      "type": "List",
+      "description": "Choose Organization ID",
+      "values": [
+        "4298007752"
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "This query shows sample data for organization open fields. Find by Organization Ids",
+      "variables": {
+        "OrganizationIds": [
+          "4298007752"
+        ]
+      }
+    }
+  ],
+  "created": "2022-03-22T13:48:46+00:00",
+  "updated": "2022-03-24T12:04:40+00:00",
+  "handlebars_config": ""
+}
