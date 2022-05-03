@@ -2,7 +2,7 @@
   "id": "302701bd",
   "name": "SwissStampTax.json",
   "title": "Swiss Stamp Tax",
-  "description": "This GraphQL query uses an International Securities Identification Number (ISIN) as an identifier type to return the Swiss Stamp Tax data on the specified instruments. The query uses the DerivedContentGovCorpBonds top-level query from the Derived Content content set.\nThe query demonstrates how a user can provide a list of instrument identifiers in the query variables rather than PermIDs.\n",
+  "description": "This GraphQL query uses an International Securities Identification Number (ISIN) as an identifier type to return the Swiss Stamp Tax data on the specified instruments. The query uses the DerivedContentGovCorpBonds top-level query from the Derived Content content set.\n\nThe query demonstrates how a user can provide a list of instrument identifiers in the query variables rather than PermIDs.\n",
   "hierarchy": "Financial Instruments",
   "content_set_type": "Financial Instruments",
   "tags": [
