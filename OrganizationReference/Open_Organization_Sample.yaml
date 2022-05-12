@@ -1,0 +1,128 @@
+version: "1.0"
+title: Open Organization with handlebars
+owner: sowmya.basavaraju@lseg.com
+render_in:
+  - UI
+hierarchy: Organization Reference
+tags:
+  - Sample
+  - Open
+  - sampledata
+  - GettingStarted
+description: >
+    This query shows sample data for organization open fields.
+query: >
+    query OrganizationQuery($OrganizationIds: [String!]) {
+      OrganizationReference(objectIds: $OrganizationIds) {
+        ObjectId
+        Names {
+          Name {
+            OrganizationName(filter: {AND: [{NameTypeCode: {EQ: "LNG"}}, {LanguageId: {EQ: "505062"}}]}) {
+              Name
+            }
+          }
+        }
+        OrganizationIncorporation_v2 {
+          Identifier {
+            Identifiers(filter: {ValueTypeId: {EQ: "320135"}}) {
+              Value
+            }
+          }
+        }
+        OrganizationDomicile_v2 {
+          Identifier {
+            Identifiers(filter: {ValueTypeId: {EQ: "320135"}}) {
+              Value
+            }
+          }
+        }
+        OrganizationIdentifiers(filter: {IdentifierTypeId_v2: {EQ: "320634"}}) {
+          IdentifierData {
+            Identifier
+          }
+        }
+        ClassificationTrbcPrimaryScheme_v2 {
+          TrbcSchemeParent {
+            TrbcSchemeParent {
+              TrbcSchemeParent {
+                TrbcSchemeParent {
+                  ObjectId
+                  Identifier {
+                    Identifiers(filter: {ValueTypeId: {EQ: "320159"}}) {
+                      Value
+                    }
+                  }
+                  Industry {
+                    Names(filter: {AND: [{NameTypeId: {EQ: "404500"}}, {LanguageId: {EQ: "505074"}}]}) {
+                      Name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+samples:
+  - name: "Find by Organization Ids"
+    variables: >
+      {
+        "OrganizationIds": [
+        
+          "4298007752"
+        ]
+      }
+output_format: handlebars
+variables_definition:
+    - name: "OrganizationIds"
+      label: "Organization ID"
+      type: List
+      description: "Choose Organization ID"
+      values:
+        - "4298007752"
+status: active
+handlebars_config: >
+  <!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+      <div class="container">
+          <h2>Organization Reference</h2>
+          <p>This query returns information about the organization by its ID.</p>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>ObjectId</th>
+                      <th>Organization name</th>
+                      <th>Country of incorporation</th>
+                      <th>Country of domicile</th>
+                      <th>Organization identifier</th>
+                      <th>Industry name</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {{#each OrganizationReference}}
+                  <tr>
+                      <td>{{this.ObjectId}}</td>
+                      <td>{{this.Names.Name.OrganizationName.[0].Name}}</td>
+                      <td>{{this.OrganizationIncorporation_v2.Identifier.Identifiers.[0].Value}}</td>
+                      <td>{{this.OrganizationDomicile_v2.Identifier.Identifiers.[0].Value}}</td>
+                      <td>{{this.OrganizationIdentifiers.[0].IdentifierData.[0].Identifier}}</td>
+                      <td>
+                          {{this.ClassificationTrbcPrimaryScheme_v2.TrbcSchemeParent.TrbcSchemeParent.TrbcSchemeParent.TrbcSchemeParent.Industry.Names.[0].Name}}
+                      </td>
+                  </tr>
+                  {{/each}}
+              </tbody>
+          </table>
+      </div>
+  </html>

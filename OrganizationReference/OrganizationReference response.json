@@ -1,0 +1,68 @@
+{
+  "OrganizationReference": [
+    {
+      "ObjectId": "4298007752",
+      "Names": {
+        "Name": {
+          "OrganizationName": [
+            {
+              "Name": "LONDON STOCK EXCHANGE GROUP PLC"
+            }
+          ]
+        }
+      },
+      "OrganizationIncorporation_v2": {
+        "Identifier": {
+          "Identifiers": [
+            {
+              "Value": "GBR"
+            }
+          ]
+        }
+      },
+      "OrganizationDomicile_v2": {
+        "Identifier": {
+          "Identifiers": [
+            {
+              "Value": "GBR"
+            }
+          ]
+        }
+      },
+      "OrganizationIdentifiers": [
+        {
+          "IdentifierData": [
+            {
+              "Identifier": "213800QAUUUP6I445N30"
+            }
+          ]
+        }
+      ],
+      "ClassificationTrbcPrimaryScheme_v2": {
+        "TrbcSchemeParent": {
+          "TrbcSchemeParent": {
+            "TrbcSchemeParent": {
+              "TrbcSchemeParent": {
+                "ObjectId": "4294952740",
+                "Identifier": {
+                  "Identifiers": [
+                    {
+                      "Value": "55"
+                    }
+                  ]
+                },
+                "Industry": {
+                  "Names": [
+                    {
+                      "Name": "Financials"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

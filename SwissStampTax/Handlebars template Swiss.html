@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <div class="container">
+        <h2>Swiss Stamp Tax</h2>
+        <p>This GraphQL query returns the Swiss Stamp Tax data.</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ObjectId</th>
+                    <th>Identifier type</th>
+                    <th>ID</th>
+                    <th>Asset type</th>
+                    <th>Swiss domestic<br> entity</th>
+                    <th>Liable for Swiss<br> Stamp Duty Tax</th>
+                    <th>Taxation comment</th>
+                    <th>Taxation type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each DerivedContentGovCorpBonds}}
+                <tr>
+                    <td>{{this.ObjectId}}</td>
+                    <td>{{this._metadata.identifierTypeName}}</td>
+                    <td>{{this._metadata.identifier}}</td>
+                    <td>{{this.SwissStampDutyTax.AssetTypeDescription}}</td>
+                    <td>{{this.SwissStampDutyTax.IssuerDomicileText}}</td>
+                    <td>{{this.SwissStampDutyTax.SwissStampDutyFlag}}</td>
+                    <td>{{this.SwissStampDutyTax.TaxationComment}}</td>
+                    <td>{{this.SwissStampDutyTax.TaxationType}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</html>

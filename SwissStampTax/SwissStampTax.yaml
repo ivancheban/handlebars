@@ -1,0 +1,109 @@
+version: "1.0"
+title: Swiss Stamp Tax
+owner: paul.gravestock@lseg.com
+render_in:
+  - GitHub
+  - UI
+  - API_Playground
+hierarchy: Financial Instruments
+tags:
+  - PermID
+  - GovCorpInstrument
+  - Swiss
+  - Stamp
+  - Tax
+  - Corporate
+  - Bonds
+description: >
+    This query uses a list of GovCorpInstrument PermIDs, and uses the DerivedConentCovCorpBonds
+    graphQl query to return the Swiss Stamp Tax data on those instruments
+
+    The query demonstrates how a user can provide a list of instrument identifiers in query
+    variables rather than PermIDs.
+query: >
+    query InstrumentRefData($identifierTypeName: DerivedContentGovCorpBondsIdentifierTypeNameEnumArgs!, $identifier: String!) {
+      DerivedContentGovCorpBonds(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {
+        ObjectId
+        _metadata{
+          #This sequence of the query returns the type of identifier, and the identifier that the user
+          #provided. This helps the user reconcile the response to the identifier that they recognise.
+          identifierTypeName
+          identifier
+        }
+        SwissStampDutyTax {
+          AssetTypeDescription
+          IssuerDomicileText
+          SwissStampDutyFlag
+          TaxationComment
+          TaxationType
+        }
+      }
+    }
+samples:
+  - name: "GraphQl query to return the Swiss Stamp Tax data"
+    variables: >
+      {
+          "identifierTypeName": "Isin",
+          "identifier": "CH0008435569"
+      }
+output_format: table
+variables_definition:
+    - name: "identifierTypeName"
+      label: "Identifier Type"
+      type: List
+      description: "Choose Identifier Type"
+      values:
+        - "Isin"
+    - name: "identifier"
+      label: "Identifier"
+      type: List
+      description: "Choose Identifier"
+      values:
+        - Isin: "CH0008435569"
+status: active
+handlebars_config: >
+  <!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+      <div class="container">
+          <h2>Swiss Stamp Tax</h2>
+          <p>This GraphQL query returns the Swiss Stamp Tax data.</p>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>ObjectId</th>
+                      <th>Identifier type</th>
+                      <th>ID</th>
+                      <th>Asset type</th>
+                      <th>Swiss domestic<br> entity</th>
+                      <th>Liable for Swiss<br> Stamp Duty Tax</th>
+                      <th>Taxation comment</th>
+                      <th>Taxation type</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {{#each DerivedContentGovCorpBonds}}
+                  <tr>
+                      <td>{{this.ObjectId}}</td>
+                      <td>{{this._metadata.identifierTypeName}}</td>
+                      <td>{{this._metadata.identifier}}</td>
+                      <td>{{this.SwissStampDutyTax.AssetTypeDescription}}</td>
+                      <td>{{this.SwissStampDutyTax.IssuerDomicileText}}</td>
+                      <td>{{this.SwissStampDutyTax.SwissStampDutyFlag}}</td>
+                      <td>{{this.SwissStampDutyTax.TaxationComment}}</td>
+                      <td>{{this.SwissStampDutyTax.TaxationType}}</td>
+                  </tr>
+                  {{/each}}
+              </tbody>
+          </table>
+      </div>
+  </html>

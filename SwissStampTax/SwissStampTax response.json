@@ -1,0 +1,18 @@
+{
+    "DerivedContentGovCorpBonds": [
+        {
+            "ObjectId": "15628455478",
+            "_metadata": {
+                "identifierTypeName": "Isin",
+                "identifier": "CH0008435569"
+            },
+            "SwissStampDutyTax": {
+                "AssetTypeDescription": "Debenture",
+                "IssuerDomicileText": "NA",
+                "SwissStampDutyFlag": "Y",
+                "TaxationComment": "Taxable GSAC asset class, tenor >1y",
+                "TaxationType": "Debenture"
+            }
+        }
+    ]
+}
