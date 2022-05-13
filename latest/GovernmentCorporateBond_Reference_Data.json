@@ -22,9 +22,7 @@
       "type": "List",
       "description": "Choose Identifier Type",
       "values": [
-        "Isin",
-        "Sedol",
-        "Cusip"
+        "Isin"
       ]
     },
     {
@@ -33,15 +31,7 @@
       "type": "List",
       "description": "Choose Identifier",
       "values": [
-        {
-          "Isin": "US645767AW49"
-        },
-        {
-          "Sedol": "B4333T3"
-        },
-        {
-          "Cusip": "36966TDN9"
-        }
+        "US645767AW49"
       ]
     }
   ],
@@ -49,20 +39,8 @@
     {
       "name": "Query demonstrates how using a list of ISINs",
       "variables": {
-        "InstrumentList": [
-          {
-            "identifierTypeName": "Isin",
-            "identifier": "US645767AW49"
-          },
-          {
-            "identifierTypeName": "Sedol",
-            "identifier": "B4333T3"
-          },
-          {
-            "identifierTypeName": "Cusip",
-            "identifier": "36966TDN9"
-          }
-        ]
+        "identifierTypeName": "Isin",
+        "identifier": "US645767AW49"
       }
     }
   ],
