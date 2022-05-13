@@ -1,0 +1,56 @@
+{
+  "id": "cde097ee",
+  "name": "BULK_FUNDMNTL_GLOB_STD_Period_FxRates.json",
+  "title": "Fundamentals Global Standardized data",
+  "description": "The query allows user to request fundamentals standardized data for one or multiple companies by provided identifier.  The response data contains financial statements details like periods and Fx rates for queried instrument.\n",
+  "hierarchy": "Fundamentals/Global/Standardized data",
+  "content_set_type": "Fundamentals",
+  "tags": [
+    "fundamentals",
+    "standardized",
+    "EDFInstrument",
+    "company",
+    "industry",
+    "quotes"
+  ],
+  "query": "query FundamentalsGlobalSTD ($InstrumentList: [OrganizationReferenceIdentifierArgs!]) {\n  OrganizationReference(identifiers: $InstrumentList) {\n    ObjectId\n    ReportedPeriod {\n      ObjectId\n      FinancialPeriod {\n        AnnualReportedFlag\n        CumulativeTypeCode\n        EarliestAnnounceDateUtcOffsetDuration\n        EarliestAnnouncementDate\n        FiscalEndMonth\n        FiscalYear\n        OrganizationId\n        PeriodDuration\n        PeriodEndDate\n        PeriodId\n        PeriodStartDate\n        PeriodType\n        TransitionalFlag\n        InterimPeriods {\n          InterimNumber\n          InterimPeriodId\n        }\n        AnnualPeriods {\n          AnnualPeriodId\n          InterimNumber\n        }\n      }\n      FundamentalFxRates {\n        FxRates {\n          AverageFlag\n          ConversionValue\n          FromCurrencyId\n          PeriodId\n          ToCurrencyId\n        }\n      }\n    }\n    FiledSource {\n      ObjectId\n      FinancialSource {\n        CapitalChangeAdjustmentDate\n        ContainsRestatementFlag\n        CumulativeAdjustmentFactor\n        DocumentFormat\n        DocumentId\n        DocumentNumber\n        EstimatedFilingDateFlag\n        FilingDate\n        FilingDateTimeUtcOffset\n        OrganizationId\n        PreliminaryFlag\n        SourceId\n        SourceTypeCode\n        StatementDate\n        ThirdPartySourceCode\n        ThirdPartySourcePriority\n        Auditors {\n          AuditorId\n          OpinionCode\n          OpinionOnGoingConcernCode\n          OpinionOnInternalControlsCode\n          PlayingAuditorRoleFlag\n          PlayingCsrAuditorRoleFlag\n          PlayingTaxAdvisorRoleFlag\n        }\n      }\n    }\n  }\n}\n",
+  "output_format": "table",
+  "variables_definition": [
+    {
+      "name": "identifierTypeName",
+      "label": "Identifier Type",
+      "type": "List",
+      "description": "Choose Identifier Type",
+      "values": [
+        "Isin"
+      ]
+    },
+    {
+      "name": "identifier",
+      "label": "Identifier",
+      "type": "List",
+      "description": "Choose Identifier",
+      "values": [
+        {
+          "Isin": "US4567881085"
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "Find by ISIN",
+      "variables": {
+        "InstrumentList": [
+          {
+            "identifierTypeName": "Isin",
+            "identifier": "US4567881085"
+          }
+        ]
+      }
+    }
+  ],
+  "created": "2021-12-17T08:10:25+00:00",
+  "updated": "2022-05-12T07:11:23+00:00",
+  "handlebars_config": ""
+}
