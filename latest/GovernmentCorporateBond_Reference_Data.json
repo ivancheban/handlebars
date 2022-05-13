@@ -34,13 +34,9 @@
       "description": "Choose Identifier",
       "values": [
         {
-          "Isin": "US645767AW49"
-        },
-        {
-          "Sedol": "B4333T3"
-        },
-        {
-          "Cusip": "36966TDN9"
+        "Isin": "US645767AW49",
+        "Sedol": "B4333T3",
+        "Cusip": "36966TDN9"
         }
       ]
     }
