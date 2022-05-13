@@ -31,7 +31,9 @@
       "type": "List",
       "description": "Choose Identifier",
       "values": [
-        "US645767AW49"
+       {
+         "Isin": "US645767AW49"
+       } 
       ]
     }
   ],
