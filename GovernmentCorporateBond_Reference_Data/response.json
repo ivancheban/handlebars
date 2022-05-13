@@ -1,0 +1,979 @@
+{
+    "GovCorpInstrument": [
+        {
+            "ObjectId": "15630997899",
+            "_metadata": {
+                "identifierTypeName": "Cusip",
+                "identifier": "36966TDN9"
+            },
+            "Reference": {
+                "SecurityDescription": "GE     4.300 11/15/25 MTN",
+                "MaturityDate": "2025-11-15",
+                "CouponTypeCode": "FXPV",
+                "CouponTypeCodeDescription": "Fixed:Plain Vanilla Fixed Coupon",
+                "Cic": "US21",
+                "CfiCode": "DTFUFR"
+            },
+            "AssetStatus": {
+                "AssetStatusCode": "ISS",
+                "AssetStatusCodeDescription": "Issued",
+                "EffectiveFromDate": "2011-11-03"
+            },
+            "CouponRateSchedule": [
+                {
+                    "CouponRate": "4.3",
+                    "EffectiveFromDate": "2011-11-03",
+                    "InterestLegNumber": 1,
+                    "LastChangedDate": "2020-04-17T21:57:37.836Z"
+                }
+            ],
+            "IssuanceDefinition": [
+                {
+                    "DatedDate": "2011-11-03",
+                    "IssueCurrencyIsoCode": "USD",
+                    "IssueAmount": "16024"
+                }
+            ],
+            "InterestDefinition": [
+                {
+                    "DayCountCode_v2": "1",
+                    "DayCountCodeDescription": "30/360 US, 30U/360, 30US/360"
+                }
+            ],
+            "AmountOutstandingHistory": [
+                {
+                    "CurrencyIsoCode": "USD",
+                    "TotalOutstandingAmount": "16024",
+                    "EffectiveFromDate": "2011-11-03",
+                    "NetChangeCode": "ISS",
+                    "NetChangeCodeDescription": "Initial Issuance"
+                }
+            ],
+            "Identifiers": [
+                {
+                    "EffectiveFromDate": "2014-07-15",
+                    "IdentifierCode": "NST",
+                    "IdentifierCodeDescription": "NASD Bond Symbol",
+                    "IdentifierValue": "GE.ATI"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "CSP",
+                    "IdentifierCodeDescription": "Cusip",
+                    "IdentifierValue": "36966TDN9"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "GE-4.3-1125"
+                },
+                {
+                    "EffectiveFromDate": "2015-12-03",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "GE-4.3-1125"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "IDI",
+                    "IdentifierCodeDescription": "Indepth Data",
+                    "IdentifierValue": "1021003"
+                },
+                {
+                    "EffectiveFromDate": "2013-01-10",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "GEB-4.3-1125"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "ISN",
+                    "IdentifierCodeDescription": "ISIN",
+                    "IdentifierValue": "US36966TDN90"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "DBS",
+                    "IdentifierCodeDescription": "DBS Primary_ID",
+                    "IdentifierValue": "110000B012FYO"
+                },
+                {
+                    "EffectiveFromDate": "2016-08-22",
+                    "IdentifierCode": "SED",
+                    "IdentifierCodeDescription": "Sedol",
+                    "IdentifierValue": "BZ5Z0L5"
+                }
+            ],
+            "Quotes": [
+                {
+                    "ObjectId": "34487752526",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "36966TDN9=RRPS",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": null,
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "EJV",
+                            "QuotePriceSourceCodeDescription": "REFINITIV PRICING SERVICE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "34487752566",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44655843299",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34487767245",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "36966TDN9=FINR",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "FINR",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "FNR",
+                            "QuotePriceSourceCodeDescription": "FINRA"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "34487752529",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "36966TDN9=RRPS",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "RRPS",
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "RRT",
+                            "QuotePriceSourceCodeDescription": "REFINITIV EVALUATED"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "196835477221",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US36966TDN90=MKCP",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "MKCP",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "EQ6",
+                            "QuotePriceSourceCodeDescription": "MARKETAXESS COMPOSITE PLUS"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44648037482",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34488217720",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46542038216",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44644449226",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46634971120",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44645276622",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34487938618",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "36966TDN9=",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": null,
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "CPN",
+                            "QuotePriceSourceCodeDescription": "REFINITIV COMPOSITE AMER"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44644721308",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US36966TDN90=UPIN",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "UPIN",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "UPI",
+                            "QuotePriceSourceCodeDescription": "UBS AG ETRADING"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44644922223",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US36966TDN90=R",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "R",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "RTF",
+                            "QuotePriceSourceCodeDescription": "TRFIT COMPOSITE"
+                        }
+                    ]
+                }
+            ],
+            "Issuer": {
+                "ObjectId": "4295903128",
+                "Names": {
+                    "Name": {
+                        "OrganizationName": [
+                            {
+                                "Name": "GENERAL ELECTRIC COMPANY",
+                                "NameTypeCode": "LNG",
+                                "NameTypeCodeDescription": "Official Name"
+                            }
+                        ]
+                    }
+                },
+                "ClassificationTrbcPrimaryScheme_v2": {
+                    "Industry": {
+                        "Name": "Consumer Goods Conglomerates (Industry) (Trbc) (1251)"
+                    },
+                    "Identifier": {
+                        "Identifiers": [
+                            {
+                                "Value": "5440101010",
+                                "ValueTypeCode": "Trbc",
+                                "ValueTypeId": "320159"
+                            }
+                        ]
+                    }
+                },
+                "Details": {
+                    "OrganizationDetails": {
+                        "JurisdictionOfIncorporation": "NEW YORK",
+                        "OrganizationTier": 1,
+                        "OrganizationTypeCode": "Company",
+                        "OrganizationSubTypeCode": "Operating Company",
+                        "OrganizationStatusCode": "Act",
+                        "OrganizationStatusCodeDescription": "Active"
+                    }
+                },
+                "UltimateParentId": "4295903128"
+            }
+        },
+        {
+            "ObjectId": "15630998198",
+            "_metadata": {
+                "identifierTypeName": "Sedol",
+                "identifier": "B4333T3"
+            },
+            "Reference": {
+                "SecurityDescription": "SBAB   3.600 10/28/21 MATd",
+                "MaturityDate": "2021-10-28",
+                "CouponTypeCode": "FXPV",
+                "CouponTypeCodeDescription": "Fixed:Plain Vanilla Fixed Coupon",
+                "Cic": "SE27",
+                "CfiCode": "DAFNFB"
+            },
+            "AssetStatus": {
+                "AssetStatusCode": "MAT",
+                "AssetStatusCodeDescription": "Expired/Matured",
+                "EffectiveFromDate": "2021-10-28"
+            },
+            "CouponRateSchedule": [
+                {
+                    "CouponRate": "3.6",
+                    "EffectiveFromDate": "2011-10-28",
+                    "InterestLegNumber": 1,
+                    "LastChangedDate": "2020-04-21T05:25:56.856Z"
+                }
+            ],
+            "IssuanceDefinition": [
+                {
+                    "DatedDate": "2011-10-28",
+                    "IssueCurrencyIsoCode": "SEK",
+                    "IssueAmount": "500000"
+                }
+            ],
+            "InterestDefinition": [
+                {
+                    "DayCountCode_v2": "1",
+                    "DayCountCodeDescription": "30/360 US, 30U/360, 30US/360"
+                }
+            ],
+            "AmountOutstandingHistory": [
+                {
+                    "CurrencyIsoCode": "SEK",
+                    "TotalOutstandingAmount": "0",
+                    "EffectiveFromDate": "2021-10-28",
+                    "NetChangeCode": "MAT",
+                    "NetChangeCodeDescription": "Maturity"
+                },
+                {
+                    "CurrencyIsoCode": "SEK",
+                    "TotalOutstandingAmount": "500000",
+                    "EffectiveFromDate": "2011-10-28",
+                    "NetChangeCode": "ISS",
+                    "NetChangeCodeDescription": "Initial Issuance"
+                }
+            ],
+            "Identifiers": [
+                {
+                    "EffectiveFromDate": "2011-10-26",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "SBAB-3.6-1021"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-26",
+                    "IdentifierCode": "ISM",
+                    "IdentifierCodeDescription": "Xtrakter",
+                    "IdentifierValue": "GA3376"
+                },
+                {
+                    "EffectiveFromDate": "2013-04-02",
+                    "IdentifierCode": "CIN",
+                    "IdentifierCodeDescription": "CINS",
+                    "IdentifierValue": "W9526ADF2"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-28",
+                    "IdentifierCode": "WPK",
+                    "IdentifierCodeDescription": "Wertpapier",
+                    "IdentifierValue": "A1GWS8"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-25",
+                    "IdentifierCode": "DBS",
+                    "IdentifierCodeDescription": "DBS Primary_ID",
+                    "IdentifierValue": "110000B012G70"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-28",
+                    "IdentifierCode": "COM",
+                    "IdentifierCodeDescription": "Common Code",
+                    "IdentifierValue": "069970206"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-28",
+                    "IdentifierCode": "SED",
+                    "IdentifierCodeDescription": "Sedol",
+                    "IdentifierValue": "B4333T3"
+                },
+                {
+                    "EffectiveFromDate": "2011-10-28",
+                    "IdentifierCode": "ISN",
+                    "IdentifierCodeDescription": "ISIN",
+                    "IdentifierValue": "XS0699702063"
+                }
+            ],
+            "Quotes": [
+                {
+                    "ObjectId": "34487753735",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34487753954",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "SE069970206=",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": null,
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "CPL",
+                            "QuotePriceSourceCodeDescription": "REFINITIV COMPOSITE EMEA"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46542644367",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46641153400",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46542512121",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "XS0699702063=TRE",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "TRE",
+                            "QuoteCurrencyIsoCode": "SEK",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "TR8",
+                            "QuotePriceSourceCodeDescription": "LONDON STOCK EXCHANGE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46642113546",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34487766176",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "GBB4333T3=L",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "L",
+                            "QuoteCurrencyIsoCode": "SEK",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "L",
+                            "QuotePriceSourceCodeDescription": "LONDON STOCK EXCHANGE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46540516942",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44642555943",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "SE069970206=RRPS",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "RRPS",
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "RRT",
+                            "QuotePriceSourceCodeDescription": "REFINITIV EVALUATED"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46550691117",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "XS0699702063=TWEB",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "TWEB",
+                            "QuoteCurrencyIsoCode": "SEK",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "TWB",
+                            "QuotePriceSourceCodeDescription": "TRADEWEB"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "236794746921",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "E",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "XS0699702063=TRU",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "TRU",
+                            "QuoteCurrencyIsoCode": "SEK",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "TR3",
+                            "QuotePriceSourceCodeDescription": "TRADEECHO APA EU"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "34487754254",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46638248302",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44647321503",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46550691119",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "46642109775",
+                    "Identifier": []
+                }
+            ],
+            "Issuer": {
+                "ObjectId": "4296770150",
+                "Names": {
+                    "Name": {
+                        "OrganizationName": [
+                            {
+                                "Name": "AB Sveriges Säkerställda Obligationer (publ)",
+                                "NameTypeCode": "LNG",
+                                "NameTypeCodeDescription": "Official Name"
+                            },
+                            {
+                                "Name": "The Swedish Covered Bond Corporation",
+                                "NameTypeCode": "LNG",
+                                "NameTypeCodeDescription": "Official Name"
+                            }
+                        ]
+                    }
+                },
+                "ClassificationTrbcPrimaryScheme_v2": {
+                    "Industry": {
+                        "Name": "Consumer Lending (NEC) (Industry) (Trbc) (1621)"
+                    },
+                    "Identifier": {
+                        "Identifiers": [
+                            {
+                                "Value": "5510103010",
+                                "ValueTypeCode": "Trbc",
+                                "ValueTypeId": "320159"
+                            }
+                        ]
+                    }
+                },
+                "Details": {
+                    "OrganizationDetails": {
+                        "JurisdictionOfIncorporation": "SWEDEN",
+                        "OrganizationTier": 1,
+                        "OrganizationTypeCode": "Company",
+                        "OrganizationSubTypeCode": "Special Purpose Vehicle",
+                        "OrganizationStatusCode": "Act",
+                        "OrganizationStatusCodeDescription": "Active"
+                    }
+                },
+                "UltimateParentId": "4296540105"
+            }
+        },
+        {
+            "ObjectId": "15628303271",
+            "_metadata": {
+                "identifierTypeName": "Isin",
+                "identifier": "US645767AW49"
+            },
+            "Reference": {
+                "SecurityDescription": "VZ     7.850 11/15/29 PUT",
+                "MaturityDate": "2029-11-15",
+                "CouponTypeCode": "FXPV",
+                "CouponTypeCodeDescription": "Fixed:Plain Vanilla Fixed Coupon",
+                "Cic": "US29",
+                "CfiCode": "DBXXXX"
+            },
+            "AssetStatus": {
+                "AssetStatusCode": "ISS",
+                "AssetStatusCodeDescription": "Issued",
+                "EffectiveFromDate": "2022-02-10"
+            },
+            "CouponRateSchedule": [
+                {
+                    "CouponRate": "7.85",
+                    "EffectiveFromDate": "1989-11-15",
+                    "InterestLegNumber": 1,
+                    "LastChangedDate": "2020-04-17T22:48:32.393Z"
+                }
+            ],
+            "IssuanceDefinition": [
+                {
+                    "DatedDate": "1989-11-15",
+                    "IssueCurrencyIsoCode": "USD",
+                    "IssueAmount": "150000"
+                }
+            ],
+            "InterestDefinition": [
+                {
+                    "DayCountCode_v2": "1",
+                    "DayCountCodeDescription": "30/360 US, 30U/360, 30US/360"
+                }
+            ],
+            "AmountOutstandingHistory": [
+                {
+                    "CurrencyIsoCode": "USD",
+                    "TotalOutstandingAmount": "86262",
+                    "EffectiveFromDate": "2022-02-10",
+                    "NetChangeCode": "TEN",
+                    "NetChangeCodeDescription": "Tender"
+                },
+                {
+                    "CurrencyIsoCode": "USD",
+                    "TotalOutstandingAmount": "86262",
+                    "EffectiveFromDate": "2016-04-01",
+                    "NetChangeCode": "TEN",
+                    "NetChangeCodeDescription": "Tender"
+                },
+                {
+                    "CurrencyIsoCode": "USD",
+                    "TotalOutstandingAmount": "150000",
+                    "EffectiveFromDate": "2000-12-31",
+                    "NetChangeCode": null,
+                    "NetChangeCodeDescription": null
+                }
+            ],
+            "Identifiers": [
+                {
+                    "EffectiveFromDate": "1991-05-10",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "BEL-7.85-1129"
+                },
+                {
+                    "EffectiveFromDate": "1989-11-15",
+                    "IdentifierCode": "WPK",
+                    "IdentifierCodeDescription": "Wertpapier",
+                    "IdentifierValue": "A0ACHY"
+                },
+                {
+                    "EffectiveFromDate": "1989-11-09",
+                    "IdentifierCode": "DBS",
+                    "IdentifierCodeDescription": "DBS Primary_ID",
+                    "IdentifierValue": "00067AB00000E"
+                },
+                {
+                    "EffectiveFromDate": "2016-04-13",
+                    "IdentifierCode": "SED",
+                    "IdentifierCodeDescription": "Sedol",
+                    "IdentifierValue": "BD3B6Q8"
+                },
+                {
+                    "EffectiveFromDate": "2009-11-02",
+                    "IdentifierCode": "COM",
+                    "IdentifierCodeDescription": "Common Code",
+                    "IdentifierValue": "034892342"
+                },
+                {
+                    "EffectiveFromDate": "1989-11-16",
+                    "IdentifierCode": "IDI",
+                    "IdentifierCodeDescription": "Indepth Data",
+                    "IdentifierValue": "84048"
+                },
+                {
+                    "EffectiveFromDate": "2000-07-03",
+                    "IdentifierCode": "BDG",
+                    "IdentifierCodeDescription": "Bridge",
+                    "IdentifierValue": "VZ-7.85-1129"
+                },
+                {
+                    "EffectiveFromDate": "2015-07-14",
+                    "IdentifierCode": "NST",
+                    "IdentifierCodeDescription": "NASD Bond Symbol",
+                    "IdentifierValue": "VZ.KV"
+                },
+                {
+                    "EffectiveFromDate": "1989-11-16",
+                    "IdentifierCode": "CSP",
+                    "IdentifierCodeDescription": "Cusip",
+                    "IdentifierValue": "645767AW4"
+                },
+                {
+                    "EffectiveFromDate": "1989-11-16",
+                    "IdentifierCode": "ISN",
+                    "IdentifierCodeDescription": "ISIN",
+                    "IdentifierValue": "US645767AW49"
+                }
+            ],
+            "Quotes": [
+                {
+                    "ObjectId": "34486602836",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44644945271",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=R",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "R",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "RTF",
+                            "QuotePriceSourceCodeDescription": "TRFIT COMPOSITE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "34480073910",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "645767AW4=RRPS",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "RRPS",
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "RRT",
+                            "QuotePriceSourceCodeDescription": "REFINITIV EVALUATED"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46634913008",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "44644823469",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=UPIN",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "UPIN",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "UPI",
+                            "QuotePriceSourceCodeDescription": "UBS AG ETRADING"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46639106137",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=BGCP",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "BGCP",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "BGP",
+                            "QuotePriceSourceCodeDescription": "BGC PARTNERS"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "196881603895",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=MKCP",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "MKCP",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "EQ6",
+                            "QuotePriceSourceCodeDescription": "MARKETAXESS COMPOSITE PLUS"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44644566614",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=UPTX",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "UPTX",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "UPZ",
+                            "QuotePriceSourceCodeDescription": "UBS-INTERDEALER (TEST)"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "236795787319",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34480073907",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34486020677",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34480073906",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "645767AW4=RRPS",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": null,
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "EJV",
+                            "QuotePriceSourceCodeDescription": "REFINITIV PRICING SERVICE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46556917627",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "645767AW4=TWBC",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "TWBC",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "PP2",
+                            "QuotePriceSourceCodeDescription": "TRADEWEB CORI AI"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "34480073911",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34480073909",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34480073908",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "645767AW4=",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": null,
+                            "QuoteCurrencyIsoCode": null,
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "CPN",
+                            "QuotePriceSourceCodeDescription": "REFINITIV COMPOSITE AMER"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "46554671046",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=MFID",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "MFID",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "ZB9",
+                            "QuotePriceSourceCodeDescription": "MIFID AGGREGATED BOND SERVICE"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44645294585",
+                    "Identifier": []
+                },
+                {
+                    "ObjectId": "34486086087",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "645767AW4=FINR",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "FINR",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "FNR",
+                            "QuotePriceSourceCodeDescription": "FINRA"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "236797853667",
+                    "Identifier": [
+                        {
+                            "GlobalRegionCode": "N",
+                            "IdentifierTypeCode": "RIC",
+                            "IdentifierValue": "US645767AW49=TRU",
+                            "ObjectTypeCode": "GCQU",
+                            "QuoteContributorCode": "TRU",
+                            "QuoteCurrencyIsoCode": "USD",
+                            "QuoteIsActiveFlag": "y",
+                            "QuotePriceSourceCode": "TR3",
+                            "QuotePriceSourceCodeDescription": "TRADEECHO APA EU"
+                        }
+                    ]
+                },
+                {
+                    "ObjectId": "44648068662",
+                    "Identifier": []
+                }
+            ],
+            "Issuer": {
+                "ObjectId": "4295900570",
+                "Names": {
+                    "Name": {
+                        "OrganizationName": [
+                            {
+                                "Name": "VERIZON NEW JERSEY INC.",
+                                "NameTypeCode": "LNG",
+                                "NameTypeCodeDescription": "Official Name"
+                            }
+                        ]
+                    }
+                },
+                "ClassificationTrbcPrimaryScheme_v2": {
+                    "Industry": {
+                        "Name": "Integrated Telecommunications Services (NEC) (Industry) (Trbc) (1811)"
+                    },
+                    "Identifier": {
+                        "Identifiers": [
+                            {
+                                "Value": "5740101010",
+                                "ValueTypeCode": "Trbc",
+                                "ValueTypeId": "320159"
+                            }
+                        ]
+                    }
+                },
+                "Details": {
+                    "OrganizationDetails": {
+                        "JurisdictionOfIncorporation": "NEW JERSEY",
+                        "OrganizationTier": 1,
+                        "OrganizationTypeCode": "Company",
+                        "OrganizationSubTypeCode": "Operating Company",
+                        "OrganizationStatusCode": "Act",
+                        "OrganizationStatusCodeDescription": "Active"
+                    }
+                },
+                "UltimateParentId": "4295911976"
+            }
+        }
+    ]
+}

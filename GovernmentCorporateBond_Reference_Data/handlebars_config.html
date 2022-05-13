@@ -1,0 +1,83 @@
+<table>
+    <tbody>
+        {{#each GovCorpInstrument}}
+        <td colspan="2"><b>Reference</b></td>
+        <tr>
+            <td>Security Description</td>
+            <td>{{this.Reference.SecurityDescription}}</td>
+        </tr>
+        <tr>
+            <td>Maturity Date</td>
+            <td>{{this.Reference.MaturityDate}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Type Code</td>
+            <td>{{this.Reference.CouponTypeCode}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Type Code Description</td>
+            <td>{{this.Reference.CouponTypeCodeDescription}}</td>
+        </tr>
+        <tr>
+            <td>Cic</td>
+            <td>{{this.Reference.Cic}}</td>
+        </tr>
+        <tr>
+            <td>Cfi Code</td>
+            <td>{{this.Reference.CfiCode}}</td>
+        </tr>
+        <td colspan="2"><b>Asset Status</b></td>
+        <tr>
+            <td>Asset Status Code</td>
+            <td>{{this.AssetStatus.AssetStatusCode}}</td>
+        </tr>
+        <tr>
+            <td>Asset Status Code Description</td>
+            <td>{{this.AssetStatus.AssetStatusCodeDescription}}</td>
+        </tr>
+        <tr>
+            <td>Asset Effective From Date</td>
+            <td>{{this.AssetStatus.EffectiveFromDate}}</td>
+        </tr>
+        <td colspan="2"><b>Coupon Rate Schedule</b></td>
+        <tr>
+            <td>Coupon Rate</td>
+            <td>{{this.CouponRateSchedule.[0].CouponRate}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Effective From Date</td>
+            <td>{{this.CouponRateSchedule.[0].EffectiveFromDate}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Interest Leg Number</td>
+            <td>{{this.CouponRateSchedule.[0].InterestLegNumber}}</td>
+        </tr>
+        <tr>
+            <td>Coupon Last Changed Date</td>
+            <td>{{this.CouponRateSchedule.[0].LastChangedDate}}</td>
+        </tr>
+        <td colspan="2"><b>Issuance Definition</b></td>
+        <tr>
+            <td>Dated Date</td>
+            <td>{{this.IssuanceDefinition.[0].DatedDate}}</td>
+        </tr>
+        <tr>
+            <td>Issue Currency Iso Code</td>
+            <td>{{this.IssuanceDefinition.[0].IssueCurrencyIsoCode}}</td>
+        </tr>
+        <tr>
+            <td>Issue Amount</td>
+            <td>{{this.IssuanceDefinition.[0].IssueAmount}}</td>
+        </tr>
+        <td colspan="2"><b>Interest Definition</b></td>
+        <tr>
+            <td>Day Count Code</td>
+            <td>{{this.InterestDefinition.[0].DayCountCode_v2}}</td>
+        </tr>
+        <tr>
+            <td>Day Count Code Description</td>
+            <td>{{this.InterestDefinition.[0].DayCountCodeDescription}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
