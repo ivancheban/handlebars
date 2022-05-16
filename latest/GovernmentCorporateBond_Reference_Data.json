@@ -22,7 +22,9 @@
       "type": "List",
       "description": "Choose Identifier Type",
       "values": [
-        "Isin"
+        "Isin",
+        "Sedol",
+        "Cusip"
       ]
     },
     {
@@ -33,7 +35,13 @@
       "values": [
        {
          "Isin": "US645767AW49"
-       } 
+       },
+       {
+         "Sedol": "B4333T3"
+       },
+       {
+         "Cusip": "36966TDN9"
+       }
       ]
     }
   ],
@@ -43,6 +51,20 @@
       "variables": {
         "identifierTypeName": "Isin",
         "identifier": "US645767AW49"
+      }
+    },
+    {
+      "name": "Query demonstrates how using a list of Sedols",
+      "variables": {
+        "identifierTypeName": "Sedol",
+        "identifier": "B4333T3"
+      }
+    },
+    {
+      "name": "Query demonstrates how using a list of Cusips",
+      "variables": {
+        "identifierTypeName": "Cusip",
+        "identifier": "36966TDN9"
       }
     }
   ],
