@@ -13,7 +13,7 @@
     "Organization",
     "Identifiers"
   ],
-  "query": "query GovernmentCorporateBondReferenceData($identifierTypeName: GovCorpInstrumentIdentifierTypeNameEnumArgs!, $identifier: String!) {GovCorpInstrument(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {\n    ObjectId\n    _metadata{\n      identifierTypeName\n      identifier\n    }\n    Reference {\n      SecurityDescription\n      MaturityDate\n      CouponTypeCode\n      CouponTypeCodeDescription: CouponTypeCode(format: Name, language: en_US, style: LongName)\n      Cic\n      CfiCode\n    }\n    AssetStatus {\n      AssetStatusCode\n      AssetStatusCodeDescription: AssetStatusCode(format: Name, language: en_US, style: LongName)\n      EffectiveFromDate\n    }\n    CouponRateSchedule {\n      CouponRate\n      EffectiveFromDate\n      InterestLegNumber\n      LastChangedDate\n    }\n    IssuanceDefinition {\n      DatedDate\n      IssueCurrencyIsoCode\n      IssueAmount\n    }\n    InterestDefinition {\n      DayCountCode_v2\n      DayCountCodeDescription: DayCountCode_v2(format: Name, language: en_US, style: LongName)\n    }\n    AmountOutstandingHistory(sort: {EffectiveFromDate: DESC}) {\n      CurrencyIsoCode\n      TotalOutstandingAmount\n      EffectiveFromDate\n      NetChangeCode\n      NetChangeCodeDescription: NetChangeCode(format: Name, language: en_US, style: LongName)\n    }\n    Identifiers {\n      EffectiveFromDate\n      IdentifierCode\n      IdentifierCodeDescription:IdentifierCode(format:Name,language:en_US,style:LongName)\n      IdentifierValue\n    }\n    Quotes {\n      ObjectId\n      Identifier(filter: {AND: [{IdentifierTypeCode: {IN: [\"ORC\", \"RIC\"]}}, {QuoteIsActiveFlag: {EQ: \"y\"}}]}) {\n        GlobalRegionCode\n        IdentifierTypeCode\n        IdentifierValue\n        ObjectTypeCode\n        QuoteContributorCode\n        QuoteCurrencyIsoCode\n        QuoteIsActiveFlag\n        QuotePriceSourceCode\n        QuotePriceSourceCodeDescription: QuotePriceSourceCode(format: Name, language: en_US, style: LongName)\n      }\n    }\n    Issuer {\n      ObjectId\n      Names {\n        Name {\n          OrganizationName(filter: {NameTypeCode: {EQ: \"LNG\"}}) {\n            Name\n            NameTypeCode\n            NameTypeCodeDescription: NameTypeCode(format: Name, language: en_US, style: LongName)\n         }\n        }\n      }\n      ClassificationTrbcPrimaryScheme_v2 {\n        Industry {\n          Name\n        }\n        Identifier {\n          Identifiers(filter: {ValueTypeId: {EQ: \"320159\"}}) {\n            Value\n            ValueTypeCode\n            ValueTypeId\n          }\n        }\n      }\n      Details {\n        OrganizationDetails {\n          JurisdictionOfIncorporation\n          OrganizationTier\n          OrganizationTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationSubTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationStatusCode\n          OrganizationStatusCodeDescription: OrganizationStatusCode(format: Name, language: en_US, style: LongName)\n        }\n      }\n      UltimateParentId\n    }\n  }\n}\n",
+  "query": "query GovernmentCorporateBondReferenceData($identifierTypeName: GovCorpInstrumentIdentifierTypeNameEnumArgs!, $identifier: String!) {\n  GovCorpInstrument(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {\n    ObjectId\n    _metadata{\n      identifierTypeName\n      identifier\n    }\n    Reference {\n      SecurityDescription\n      MaturityDate\n      CouponTypeCode\n      CouponTypeCodeDescription: CouponTypeCode(format: Name, language: en_US, style: LongName)\n      Cic\n      CfiCode\n    }\n    AssetStatus {\n      AssetStatusCode\n      AssetStatusCodeDescription: AssetStatusCode(format: Name, language: en_US, style: LongName)\n      EffectiveFromDate\n    }\n    CouponRateSchedule {\n      CouponRate\n      EffectiveFromDate\n      InterestLegNumber\n      LastChangedDate\n    }\n    IssuanceDefinition {\n      DatedDate\n      IssueCurrencyIsoCode\n      IssueAmount\n    }\n    InterestDefinition {\n      DayCountCode_v2\n      DayCountCodeDescription: DayCountCode_v2(format: Name, language: en_US, style: LongName)\n    }\n    AmountOutstandingHistory(sort: {EffectiveFromDate: DESC}) {\n      CurrencyIsoCode\n      TotalOutstandingAmount\n      EffectiveFromDate\n      NetChangeCode\n      NetChangeCodeDescription: NetChangeCode(format: Name, language: en_US, style: LongName)\n    }\n    Identifiers {\n      EffectiveFromDate\n      IdentifierCode\n      IdentifierCodeDescription:IdentifierCode(format:Name,language:en_US,style:LongName)\n      IdentifierValue\n    }\n    Quotes {\n      ObjectId\n      Identifier(filter: {AND: [{IdentifierTypeCode: {IN: [\"ORC\", \"RIC\"]}}, {QuoteIsActiveFlag: {EQ: \"y\"}}]}) {\n        GlobalRegionCode\n        IdentifierTypeCode\n        IdentifierValue\n        ObjectTypeCode\n        QuoteContributorCode\n        QuoteCurrencyIsoCode\n        QuoteIsActiveFlag\n        QuotePriceSourceCode\n        QuotePriceSourceCodeDescription: QuotePriceSourceCode(format: Name, language: en_US, style: LongName)\n      }\n    }\n    Issuer {\n      ObjectId\n      Names {\n        Name {\n          OrganizationName(filter: {NameTypeCode: {EQ: \"LNG\"}}) {\n            Name\n            NameTypeCode\n            NameTypeCodeDescription: NameTypeCode(format: Name, language: en_US, style: LongName)\n         }\n        }\n      }\n      ClassificationTrbcPrimaryScheme_v2 {\n        Industry {\n          Name\n        }\n        Identifier {\n          Identifiers(filter: {ValueTypeId: {EQ: \"320159\"}}) {\n            Value\n            ValueTypeCode\n            ValueTypeId\n          }\n        }\n      }\n      Details {\n        OrganizationDetails {\n          JurisdictionOfIncorporation\n          OrganizationTier\n          OrganizationTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationSubTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationStatusCode\n          OrganizationStatusCodeDescription: OrganizationStatusCode(format: Name, language: en_US, style: LongName)\n        }\n      }\n      UltimateParentId\n    }\n  }\n}\n",
   "output_format": "handlebars",
   "variables_definition": [
     {
@@ -22,7 +22,9 @@
       "type": "List",
       "description": "Choose Identifier Type",
       "values": [
-        "Isin"
+        "Isin",
+        "Sedol",
+        "Cusip"
       ]
     },
     {
@@ -31,18 +33,38 @@
       "type": "List",
       "description": "Choose Identifier",
       "values": [
-        {
-          "Isin": "US645767AW49"
-        }
+       {
+         "Isin": "US645767AW49"
+       },
+       {
+         "Sedol": "B4333T3"
+       },
+       {
+         "Cusip": "36966TDN9"
+       }
       ]
     }
   ],
   "samples": [
     {
-      "name": "Find by a mixture of identifier types",
+      "name": "Query demonstrates how using a list of ISINs",
       "variables": {
         "identifierTypeName": "Isin",
         "identifier": "US645767AW49"
+      }
+    },
+    {
+      "name": "Query demonstrates how using a list of Sedols",
+      "variables": {
+        "identifierTypeName": "Sedol",
+        "identifier": "B4333T3"
+      }
+    },
+    {
+      "name": "Query demonstrates how using a list of Cusips",
+      "variables": {
+        "identifierTypeName": "Cusip",
+        "identifier": "36966TDN9"
       }
     }
   ],
