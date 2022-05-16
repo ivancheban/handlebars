@@ -47,7 +47,7 @@
       }
     }
   ],
-  "created": "2021-11-09T09:03:26+00:00",
-  "updated": "2022-05-12T21:34:06+03:00",
+  "created": "2021-11-18T18:17:56+00:00",
+  "updated": "2022-05-13T16:03:11+00:00",
   "handlebars_config": "<table class=\"table table-bordered\">\n    <thead>\n        <tr>\n            <th>ObjectId</th>\n            <th>Identifier type</th>\n            <th>ID</th>\n            <th>Asset type</th>\n            <th>Swiss domestic<br> entity</th>\n            <th>Liable for Swiss<br> Stamp Duty Tax</th>\n            <th>Taxation comment</th>\n            <th>Taxation type</th>\n        </tr>\n    </thead>\n    <tbody>\n        {{#each DerivedContentGovCorpBonds}}\n        <tr>\n            <td>{{this.ObjectId}}</td>\n            <td>{{this._metadata.identifierTypeName}}</td>\n            <td>{{this._metadata.identifier}}</td>\n            <td>{{this.SwissStampDutyTax.AssetTypeDescription}}</td>\n            <td>{{this.SwissStampDutyTax.IssuerDomicileText}}</td>\n            <td>{{this.SwissStampDutyTax.SwissStampDutyFlag}}</td>\n            <td>{{this.SwissStampDutyTax.TaxationComment}}</td>\n            <td>{{this.SwissStampDutyTax.TaxationType}}</td>\n        </tr>\n        {{/each}}\n    </tbody>\n</table>"
 }

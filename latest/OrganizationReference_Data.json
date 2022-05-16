@@ -1,0 +1,60 @@
+{
+  "id": "62f07256",
+  "name": "OrganizationReference_Data.json",
+  "title": "Organization Reference Data",
+  "description": "This query demonstrates using a list of Legal Entity Identifiers to return Organization Reference Data:\n  * Demonstrates how the Domicile of the Organizartion can be represented by the name, and ISO 31661 Alpha 2 code\n  * The different styles of name and language that are available\n  * Business description (showing how to filter the result by specifying a language PermID 505062 - English)\n  * The identifiers associated with the organization (including Tax Ids, Company Registration Ids)\n  * The addresses and phone / fax numbers accociated with the organization\n  * Organization Reference Data\n  * TRBC and NAICS Classification Description and Scheme values\n  * Organizations related to the organization being queried. In this example, the query links to a child instance of the OrganizationReference model for the Registration Authority (where the user would have acess to all attributes in the data model), where as the Tax Authority, Primary Regulator, and Ultimate Parent of the organizartion are identified by their Organiz`tion PermIDs.` \nThe query demonstrates how fields that contain enumerated values can be configured to return a human readable value rather than the enumerated value. Each field that contains an enumerated value is followed by a request for the human readable value. Depending ono the nature of the content of the field, this human readable value is either a description, or a recognised identifier. The data returned is not exhaustive, but is intended to demonstrate what kind of data is available, how to apply filters to constrain the response where multiple records are returned, and how to expand enumerated values.\n",
+  "hierarchy": "Organization Reference",
+  "content_set_type": "Organization Reference",
+  "tags": [
+    "Organiztion",
+    "Reference",
+    "Classification",
+    "Identifiers"
+  ],
+  "query": "query OrganizationData($identifierTypeName: OrganizationReferenceIdentifierTypeNameEnumArgs!, $identifier: String!) {\n  OrganizationReference(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {\n    _metadata {\n      identifier\n    }\n    ObjectId\n    OrganizationDomicile_v2 {\n      Geography {\n        LongName\n      }\n      Identifier {\n        Identifiers(filter: {ValueTypeId: {EQ: \"320099\"}}) {\n          Value\n          ValueTypeCode\n          ValueTypeId\n        }\n      }\n    }\n    Names {\n      Name {\n        OrganizationName {\n          NameTypeCode\n          NameTypeCodeDescr: NameTypeCode(format: Name, style: LongName, language: en_US)\n          SequenceNumber\n          LanguageId_v2\n          LanguageId_v2Descr: LanguageId_v2(format: Bcp47)\n          ProviderId\n          ProviderIdDescr: ProviderId(format: Name, style: LongName, language: en_US)\n          EffectiveFromDate\n          LastModifiedDate\n          Name\n          NormalizedName\n          TransliteratedName\n          PrimaryNameFlag\n          SourceLink\n          SourceTypeId\n          SourceTypeIdDescr: SourceTypeId(format: Name, style: LongName, language: en_US)\n          SourceUpdateDate\n        }\n      }\n    }\n    Business {\n      Description (filter:{LanguageId:{EQ:\"505062\"}}) {\n        LanguageId\n        LanguageIdDescr: LanguageId(format: Bcp47)\n        BusinessDescriptionEffectiveFrom\n        BusinessDescription\n        BusinessDescriptionLastModified\n        Provenance {\n          SourceTypeCode_v2\n          SourceTypeCode_v2Descr: SourceTypeCode_v2(format: Name, style: LongName, language: en_US)\n          SourceFilingDate\n          LanguageId\n          LanguageIdDescr: LanguageId(format: Bcp47)\n          SourceLink\n          SourceUpdateDate\n        }\n      }\n    }\n    OrganizationIdentifiers {\n      IdentifierTypeId_v2\n      IdentifierTypeId_v2Descr: IdentifierTypeId_v2(format: Name, style: LongName, language: en_US)\n      IdentifierData {\n        Identifier\n        IdentifierCreatedDate\n        IdentifierEffectiveFrom\n        LastModifiedDate\n        Source\n        SourceLastUpdateDate\n        SourceTypeCode_v2\n        SourceUpdateDate\n      }\n    }\n    Addresses {\n      AddressTypeCode\n      AddressTypeCodeDescr: AddressTypeCode(format: Name, style: LongName, language: en_US)\n      LanguageId_v2\n      LanguageId_v2Descr: LanguageId_v2(format: Bcp47)\n      EffectiveFrom\n      AddressLastModifiedDate\n      AddressSourceLink\n      Line1\n      Line2\n      Line3\n      City\n      StateProvinceOfficialCode\n      StateProvinceId_v2\n      StateProvinceId_v2Descr:StateProvinceId_v2(format:Name,style:LongName,language:en_US)\n      CountryId_v2\n      CountryId_v2Descr: CountryId_v2(format: Name, style: LongName, language: en_US)\n      CountryId_v2Iso: CountryId_v2(format: Iso_31661_2)\n      PostalCode\n      Line1Transliterated\n      Line2Transliterated\n      Line3Transliterated\n      SourceTypeCode_v2\n      SourceTypeCode_v2Descr: SourceTypeCode_v2(format: Name, style: LongName, language: en_US)\n      SourceUpdateDate\n    }\n    OrganizationPhone {\n      OrganizationPhoneFaxType\n      OrganizationPhoneFaxTypeDescr: OrganizationPhoneFaxType(format: Name, style: LongName, language: en_US)\n      OrganizationPhoneFaxEffectiveFrom\n      OrganizationPhoneFaxLastModified\n      OrganizationPhoneFaxNumber\n      OrganizationPhoneFaxSourceLink\n      SourceTypeCode_v2\n      SourceTypeCode_v2Descr: SourceTypeCode_v2(format: Name, style: LongName, language: en_US)\n      SourceUpdateDate\n    }\n    Details {\n      OrganizationDetails {\n        JurisdictionOfIncorporation\n        OrganizationTier\n        OrganizationStatusCode\n        OrganizationStatusCodeDescr: OrganizationStatusCode(format: Name, style: LongName, language: en_US)\n        OrganizationTypeCode\n        OrganizationTypeCodeDescr: OrganizationTypeCode(format: Name, style: LongName, language: en_US)\n        OrganizationSubTypeCode\n        OrganizationSubTypeCodeDescr: OrganizationSubTypeCode(format: Name, style: LongName, language: en_US)\n        FoundedDay\n        FoundedMonth\n        FoundedYear\n        PublicFlag\n        IpoDate\n        OrganizationWebsite\n      }\n    }\n    ClassificationTrbcPrimaryScheme_v2 {\n      Industry {\n        LongName\n        Names(filter: {AND: [{LanguageId: {EQ: \"505074\"}}, {NameTypeId: {EQ: \"404502\"}}]}) {\n          LanguageId\n          Name\n          NameOrder\n          NameTypeId\n        }\n      }\n      Identifier {\n        Identifiers (filter:{ValueTypeId:{EQ:\"320159\"}}) {\n          Value\n          ValueTypeCode\n          ValueTypeId\n        }\n      }\n    }\n    ClassificationNaicsPrimaryScheme_v2 {\n      Industry {\n        LongName\n        Names(filter: {AND: [{LanguageId: {EQ: \"505074\"}}, {NameTypeId: {EQ: \"404502\"}}]}) {\n          LanguageId\n          Name\n          NameOrder\n          NameTypeId\n        }\n      }\n      Identifier {\n        Identifiers {\n          Value\n          ValueTypeCode\n          ValueTypeId\n        }\n      }\n    }\n    RegistrationAuthority{\n      ObjectId\n      Names{\n        Name{\n          OrganizationName(filter:{NameTypeCode:{EQ:\"LNG\"}}) {\n            Name\n          }\n        }\n      }\n    }\n    TaxAuthorityId\n    PrimaryRegulatorId\n    UltimateParentId\n  }\n}\n",
+  "output_format": "json",
+  "variables_definition": [
+    {
+      "name": "identifierTypeName",
+      "label": "Identifier Type",
+      "type": "List",
+      "description": "Choose Identifier Type",
+      "values": [
+        "LEI"
+      ]
+    },
+    {
+      "name": "identifier",
+      "label": "Identifier",
+      "type": "List",
+      "description": "Choose Identifier",
+      "values": [
+        {
+          "LEI": "213800QAUUUP6I445N30"
+        },
+        {
+          "LEI": "54930035YLO0PKMDT602"
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "Query demonstrates using a list of Legal Entity Identifiers to return Organization Reference Data",
+      "variables": {
+        "identifierTypeName": "LEI",
+        "identifier": "213800QAUUUP6I445N30"
+      }
+    },
+    {
+      "name": "Query demonstrates using a list of Legal Entity Identifiers to return Organization Reference Data",
+      "variables": {
+        "identifierTypeName": "LEI",
+        "identifier": "54930035YLO0PKMDT602"
+      }
+    }
+  ],
+  "created": "2022-04-28T09:50:21+00:00",
+  "updated": "2022-05-12T18:53:59+03:00",
+  "handlebars_config": ""
+}

@@ -1,0 +1,52 @@
+{
+  "id": "6d72c994",
+  "name": "GovCorpBondReferenceData-2.json",
+  "title": "Government and Corporate Bond Reference Data 2",
+  "description": "This query demonstrates how using a list of different identifier types and identifiers, the user can request:\n  * Instrument level reference data including:\n  * Instrument Identifiers\n  * Coupon Schedule\n  * Amount Outstanding Schedlue sorted in descending effective date order\n  * Identify the Valuation Quote (the quote used to calculate market capitalisation of the issue)\n  * Quote level identifiers for all active quotes of the instrument\n  * The name, TRBC Scheme level 5, organizsation type, status, and ultimate parent ID for the issuer of the instrument\nThe query demonstrates how fields that contain enumerated values can be configured to return a human readable value rather than the enumeration Entitlements: To access the data returned by this query, the user account must have licences that include:\n  * Government and Corporate Bond Reference Data - PRS / FI_GOV_REFERENCE\n  * Organization Refence Data - PRS / BASIC_ENTITY\nThe query requests instrument identifiers associated with the instrument - if the instrument being queried  has a SEDOL or CUSIP, the Identifier will be suppressed unless the user has the appropriate licences (SYMBOLOGY / IDENTIFIER_TYPE_SEDOL and IDENTIFER_TYPE_SEDOL)\n",
+  "hierarchy": "Reference Data / Instrument / Bonds",
+  "content_set_type": "Reference Data ",
+  "tags": [
+    "Government",
+    "Corporate",
+    "Reference",
+    "Instrument",
+    "Organization",
+    "Identifiers"
+  ],
+  "query": "query GovernmentCorporateBondReferenceData($identifierTypeName: GovCorpInstrumentIdentifierTypeNameEnumArgs!, $identifier: String!) {\n  GovCorpInstrument(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {\n    ObjectId\n    _metadata{\n      identifierTypeName\n      identifier\n    }\n    Reference {\n      SecurityDescription\n      MaturityDate\n      CouponTypeCode\n      CouponTypeCodeDescription: CouponTypeCode(format: Name, language: en_US, style: LongName)\n      Cic\n      CfiCode\n    }\n    AssetStatus {\n      AssetStatusCode\n      AssetStatusCodeDescription: AssetStatusCode(format: Name, language: en_US, style: LongName)\n      EffectiveFromDate\n    }\n    CouponRateSchedule {\n      CouponRate\n      EffectiveFromDate\n      InterestLegNumber\n      LastChangedDate\n    }\n    IssuanceDefinition {\n      DatedDate\n      IssueCurrencyIsoCode\n      IssueAmount\n    }\n    InterestDefinition {\n      DayCountCode_v2\n      DayCountCodeDescription: DayCountCode_v2(format: Name, language: en_US, style: LongName)\n    }\n    AmountOutstandingHistory(sort: {EffectiveFromDate: DESC}) {\n      CurrencyIsoCode\n      TotalOutstandingAmount\n      EffectiveFromDate\n      NetChangeCode\n      NetChangeCodeDescription: NetChangeCode(format: Name, language: en_US, style: LongName)\n    }\n    Identifiers {\n      EffectiveFromDate\n      IdentifierCode\n      IdentifierCodeDescription:IdentifierCode(format:Name,language:en_US,style:LongName)\n      IdentifierValue\n    }\n    Quotes {\n      ObjectId\n      Identifier(filter: {AND: [{IdentifierTypeCode: {IN: [\"ORC\", \"RIC\"]}}, {QuoteIsActiveFlag: {EQ: \"y\"}}]}) {\n        GlobalRegionCode\n        IdentifierTypeCode\n        IdentifierValue\n        ObjectTypeCode\n        QuoteContributorCode\n        QuoteCurrencyIsoCode\n        QuoteIsActiveFlag\n        QuotePriceSourceCode\n        QuotePriceSourceCodeDescription: QuotePriceSourceCode(format: Name, language: en_US, style: LongName)\n      }\n    }\n    Issuer {\n      ObjectId\n      Names {\n        Name {\n          OrganizationName(filter: {NameTypeCode: {EQ: \"LNG\"}}) {\n            Name\n            NameTypeCode\n            NameTypeCodeDescription: NameTypeCode(format: Name, language: en_US, style: LongName)\n        }\n        }\n      }\n      ClassificationTrbcPrimaryScheme_v2 {\n        Industry {\n          Name\n        }\n        Identifier {\n          Identifiers(filter: {ValueTypeId: {EQ: \"320159\"}}) {\n            Value\n            ValueTypeCode\n            ValueTypeId\n          }\n        }\n      }\n      Details {\n        OrganizationDetails {\n          JurisdictionOfIncorporation\n          OrganizationTier\n          OrganizationTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationSubTypeCode(format: Name, language: en_US, style: LongName)\n          OrganizationStatusCode\n          OrganizationStatusCodeDescription: OrganizationStatusCode(format: Name, language: en_US, style: LongName)\n        }\n      }\n      UltimateParentId\n    }\n  }\n}\n",
+  "output_format": "handlebars",
+  "variables_definition": [
+    {
+      "name": "identifierTypeName",
+      "label": "Identifier Type",
+      "type": "List",
+      "description": "Choose Identifier Type",
+      "values": [
+        "Sedol"
+      ]
+    },
+    {
+      "name": "identifier",
+      "label": "Identifier",
+      "type": "List",
+      "description": "Choose Identifier",
+      "values": [
+        {
+          "Sedol": "B4333T3"
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "Query demonstrates how using a list of Sedols",
+      "variables": {
+        "identifierTypeName": "Sedol",
+        "identifier": "B4333T3"
+      }
+    }
+  ],
+  "created": "2022-05-13T17:02:22+00:00",
+  "updated": "2022-05-13T17:02:22+00:00",
+  "handlebars_config": "<table>\n    <tbody>\n        {{#each GovCorpInstrument}}\n        <td colspan=\"2\"><b>Reference</b></td>\n        <tr>\n            <td>Security Description</td>\n            <td>{{this.Reference.SecurityDescription}}</td>\n        </tr>\n        <tr>\n            <td>Maturity Date</td>\n            <td>{{this.Reference.MaturityDate}}</td>\n        </tr>\n        <tr>\n            <td>Coupon Type Code</td>\n            <td>{{this.Reference.CouponTypeCode}}</td>\n        </tr>\n        <tr>\n            <td>Coupon Type Code Description</td>\n            <td>{{this.Reference.CouponTypeCodeDescription}}</td>\n        </tr>\n        <tr>\n            <td>Cic</td>\n            <td>{{this.Reference.Cic}}</td>\n        </tr>\n        <tr>\n            <td>Cfi Code</td>\n            <td>{{this.Reference.CfiCode}}</td>\n        </tr>\n        <td colspan=\"2\"><b>Asset Status</b></td>\n        <tr>\n            <td>Asset Status Code</td>\n            <td>{{this.AssetStatus.AssetStatusCode}}</td>\n        </tr>\n        <tr>\n            <td>Asset Status Code Description</td>\n            <td>{{this.AssetStatus.AssetStatusCodeDescription}}</td>\n        </tr>\n        <tr>\n            <td>Asset Effective From Date</td>\n            <td>{{this.AssetStatus.EffectiveFromDate}}</td>\n        </tr>\n        <td colspan=\"2\"><b>Coupon Rate Schedule</b></td>\n        <tr>\n            <td>Coupon Rate</td>\n            <td>{{this.CouponRateSchedule.[0].CouponRate}}</td>\n        </tr>\n        <tr>\n            <td>Coupon Effective From Date</td>\n            <td>{{this.CouponRateSchedule.[0].EffectiveFromDate}}</td>\n        </tr>\n        <tr>\n            <td>Coupon Interest Leg Number</td>\n            <td>{{this.CouponRateSchedule.[0].InterestLegNumber}}</td>\n        </tr>\n        <tr>\n            <td>Coupon Last Changed Date</td>\n            <td>{{this.CouponRateSchedule.[0].LastChangedDate}}</td>\n        </tr>\n        <td colspan=\"2\"><b>Issuance Definition</b></td>\n        <tr>\n            <td>Dated Date</td>\n            <td>{{this.IssuanceDefinition.[0].DatedDate}}</td>\n        </tr>\n        <tr>\n            <td>Issue Currency Iso Code</td>\n            <td>{{this.IssuanceDefinition.[0].IssueCurrencyIsoCode}}</td>\n        </tr>\n        <tr>\n            <td>Issue Amount</td>\n            <td>{{this.IssuanceDefinition.[0].IssueAmount}}</td>\n        </tr>\n        <td colspan=\"2\"><b>Interest Definition</b></td>\n        <tr>\n            <td>Day Count Code</td>\n            <td>{{this.InterestDefinition.[0].DayCountCode_v2}}</td>\n        </tr>\n        <tr>\n            <td>Day Count Code Description</td>\n            <td>{{this.InterestDefinition.[0].DayCountCodeDescription}}</td>\n        </tr>\n        {{/each}}\n    </tbody>\n</table>"
+}

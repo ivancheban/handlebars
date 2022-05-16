@@ -1,0 +1,43 @@
+{
+  "id": "899784d0",
+  "name": "Referebce_Lookup_Tables.json",
+  "title": "Referebce Look-up Tables",
+  "description": "Referebce Look-up Tables for Fundamentals\n",
+  "hierarchy": "Fundamentals",
+  "content_set_type": "Fundamentals",
+  "tags": [
+    "Referebce",
+    "Look-up"
+  ],
+  "query": "query Lookuptables($ValueDomainId: [Long!]) {\n  ValueDomainEnumeration(filter: {ValueDomainEnumeration: {ValueDomainId: {IN: $ValueDomainId}}}) {\n    ValueDomainEnumeration {\n      LongName\n      Name\n      Value\n      ValueDomainEnumerationId\n      ValueDomainId\n      Names(filter: {LanguageId: {EQ: \"505074\"}}) {\n        LanguageId\n        Name\n        NameOrder\n        NameSequence\n        NameType\n      }\n    }\n  }\n}\n",
+  "output_format": "table",
+  "variables_definition": [
+    {
+      "name": "ValueDomainId",
+      "label": "Value Domain Id",
+      "type": "List",
+      "description": "Choose Value Domain Id",
+      "values": [
+        "3001024",
+        "3001045"
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "3001024",
+      "variables": {
+        "ValueDomainId": "3001024"
+      }
+    },
+    {
+      "name": "3001045",
+      "variables": {
+        "ValueDomainId": "3001045"
+      }
+    }
+  ],
+  "created": "2022-04-28T09:50:21+00:00",
+  "updated": "2022-05-12T18:53:59+03:00",
+  "handlebars_config": ""
+}

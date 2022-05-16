@@ -39,6 +39,6 @@
     }
   ],
   "created": "2022-04-28T09:50:21+00:00",
-  "updated": "2022-05-12T21:34:06+03:00",
+  "updated": "2022-05-13T16:03:11+00:00",
   "handlebars_config": "<table>\n    <thead>\n        <tr>\n            <th>ObjectId</th>\n            <th>Organization name</th>\n            <th>Country of incorporation</th>\n            <th>Country of domicile</th>\n            <th>Organization identifier</th>\n            <th>Industry name</th>\n        </tr>\n    </thead>\n    <tbody>\n        {{#each OrganizationReference}}\n        <tr>\n            <td>{{this.ObjectId}}</td>\n            <td>{{this.Names.Name.OrganizationName.[0].Name}}</td>\n            <td>{{this.OrganizationIncorporation_v2.Identifier.Identifiers.[0].Value}}</td>\n            <td>{{this.OrganizationDomicile_v2.Identifier.Identifiers.[0].Value}}</td>\n            <td>{{this.OrganizationIdentifiers.[0].IdentifierData.[0].Identifier}}</td>\n            <td>\n                {{this.ClassificationTrbcPrimaryScheme_v2.TrbcSchemeParent.TrbcSchemeParent.TrbcSchemeParent.TrbcSchemeParent.Industry.Names.[0].Name}}\n            </td>\n        </tr>\n        {{/each}}\n    </tbody>\n</table>\n"
 }

@@ -1,0 +1,42 @@
+{
+  "id": "399871b8",
+  "name": "Geography_PermIDs.json",
+  "title": "Geography PermIDs",
+  "description": "This query calls the Geography data model using the list of Geography PermIDs listed in Query Variables. The query returns all content items in the model:\n * AdminStatus\n * Identifier\n * Geography\n\n Additionally, three relationships are called:\n\n *CountryCapital* - which creates a new instance of the Geography\n                     data model, and requests the name of the resulting\n                     geograpghy PermID\n\n *CountryCurrency* - which creates a new instance of the Currency data\n                     model, and uses a filter to return the Iso4217 currency code.\n\n *GeospatialChildren* - which creates a new instance of the Geography data model\n                        and requests the names of the resulting children. This\n                        relationship is also used demonstrate how to return an\n                        array of the Geography PermIDs of the resulting children\n                        without linking to a new instance of the Geography data model.\n",
+  "hierarchy": "Geography",
+  "content_set_type": "Geography",
+  "tags": [
+    "AdminStatus",
+    "Identifier",
+    "Geography",
+    "Country"
+  ],
+  "query": "query Geography($GeographyList: [String!]) {\n    Geography(objectIds: $GeographyList) {\n      AdminStatus {\n        AdminStatus\n        AdminStatusReason\n        EffectiveFromDate\n        EffectiveToDate\n        EntityCreatedDate\n        EntityModifiedDate\n        GeographyId\n        NotDeduplicatedFlag\n        UnconfirmedFlag\n      }\n      Identifier {\n        GeographyId\n        # The filter applied here limits the identifier types to:\n        #   320128 - Iso31661Numeric\n        #   320099 - Iso31661Alpha2\n        #   320135 - Iso31661Alpha3\n        Identifiers(filter: {ValueTypeId: {IN: [\"320128\", \"320099\", \"320135\"]}}) {\n          EffectiveFromDate\n          EffectiveToDate\n          PrimaryFlag\n          ProviderId\n          ProviderType\n          SourceLinkUrl\n          SourceType\n          SourceUpdateDate\n          TypeId\n          Value\n          ValueOrder\n          ValueTypeCode\n          ValueTypeId\n        }\n      }\n      Geography {\n        ActiveFromDate\n        ActiveToDate\n        ElevationNumber\n        GeographyId\n        LatitudeNumber\n        LongName\n        LongitudeNumber\n        Name\n        GeographyTypes {\n          EffectiveFromDate\n          EffectiveToDate\n          TypeId\n        }\n\n        # The filter applied here limits the Names records returned to those where:\n        #   The language of the name is 505074 - US English\n        #   The type of name returned is 404500 - LongDescription\n        Names(filter: {AND: [{LanguageId: {EQ: \"505074\"}}, {NameTypeId: {EQ: \"404500\"}}]}) {\n          EffectiveFromDate\n          EffectiveToDate\n          LanguageId\n          Name\n          NameOrder\n          NameTypeId\n        }\n      }\n\n      # The CountryCapital relationship returns the Geography PermID of the capital city\n      # of a country when the user provides a Geography PermID of a country. The relationship\n      # creates a child inststance of the Geography data model, where the user can access all\n      # attributes of the model.\n      CountryCapital {\n        Geography {\n          LatitudeNumber\n          LongitudeNumber\n          Names(filter: {AND: [{LanguageId: {EQ: \"505074\"}}, {NameTypeId: {EQ: \"404500\"}}]}) {\n            EffectiveFromDate\n            EffectiveToDate\n            LanguageId\n            Name\n            NameOrder\n            NameTypeId\n          }\n        }\n      }\n        # The CountryCurrency relationship returns the Currency PermID of the currency of the\n        # country represented by the Geography PermID being queried. The relationship links to the\n        # Currency data model, where the user can access all attributes of the model. All fields\n        # within CountryCurrency {..} are from the Currency data model.\n      CountryCurrency {\n        ObjectId\n        Currency {\n          DecimalPlaces\n          Name\n        }\n        Identifier {\n          # The filter applied here limits the type of identifier returned to 320001 - Iso4217\n\n          Identifiers(filter: {ValueTypeId: {EQ: \"320001\"}}) {\n            EffectiveFromDate\n            EffectiveToDate\n            PrimaryFlag\n            ProviderId\n            ProviderType\n            SourceLinkUrl\n            SourceType\n            SourceUpdateDate\n            TypeId\n            Value\n            ValueOrder\n            ValueTypeCode\n            ValueTypeId\n          }\n        }\n      }\n\n      # This relationship returns the Geography PermIDs of the objects that\n      # are classed as children of the Geography PermID bewing queried. Where\n      # a country Geography PermID is used, the children will be the states, counties\n      # or prefectures (for example) of the country. The relationship creates a child\n      # instance of the Geography model, where the user can access all attributes of\n      # the model.\n      # In this example the query simply returns the name of the child GeographyIDs\n      GeospatialChildren {\n        ObjectId\n        Geography {\n          Name\n        }\n      }\n      # As an alternative to using GeospatialChildren, which creates a child instance of the\n      # Geography model, users can simply request an array of the PermIDs that this relatiopnship\n      # returns\n      GeospatialChildrenId\n    }\n  }\n",
+  "output_format": "json",
+  "variables_definition": [
+    {
+      "name": "GeographyList",
+      "label": "Geography ID",
+      "type": "List",
+      "description": "Choose Geography ID",
+      "values": [
+        "100148",
+        "100025"
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "Query calls the Geography data model using the list of Geography PermIDs",
+      "variables": {
+        "GeographyList": [
+          "100148",
+          "100025"
+        ]
+      }
+    }
+  ],
+  "created": "2021-12-22T08:30:18+00:00",
+  "updated": "2022-05-12T18:53:59+03:00",
+  "handlebars_config": ""
+}

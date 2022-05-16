@@ -1,0 +1,74 @@
+{
+  "id": "32f82cbb",
+  "name": "Equity_Reference_Data.json",
+  "title": "Equity Reference Data",
+  "description": "This query demonstrates how using a list of different identifier types and identifiers, the user can request:\n  * Instrument level reference data including:\n  * Swiss Stamp Tax Data\n  * Instrument Identifiers\n  * The name, and TRBC Scheme level 5 for the issuer of the instrument\n  * Identify the Valuation Quote (the quote used to calculate market capitalisation of the issue)\n  * Quote level reference data for all active quotes of the instrument including:\n  * The name of the exchange on which each quote trades\n  * The RIC of the quote\n",
+  "hierarchy": "Equity",
+  "content_set_type": "Equity",
+  "tags": [
+    "Equity",
+    "Reference",
+    "Swiss",
+    "Tax",
+    "Instrument",
+    "Identifiers"
+  ],
+  "query": "query Equity_ReferenceData($identifierTypeName: EDFInstrumentIdentifierTypeNameEnumArgs!, $identifier: String!) {\n  EDFInstrument(identifiers: [{identifierTypeName: $identifierTypeName, identifier: $identifier}]) {\n    _metadata {\n      identifier\n    }\n    ObjectId\n    Reference {\n      InstrumentCommonNames {\n        InstrumentCommonName\n        LanguageId\n      }\n      Cfi\n      AssetClassId\n      DtccEligible\n      DerivedContent {\n        SwissStampDutyTax {\n          AssetTypeDescription\n          IssuerDomicileText\n          SwissStampDutyFlag\n          TaxationComment\n          TaxationType\n        }\n        UnitOfDelivery {\n          UnitOfDeliveryCode\n        }\n      }\n    }\n    InstrumentIdentifiers(filter: {IdentifierData: {IdentifierValue: {EXISTS: true}}}) {\n      IdentifierTypeId\n      IdentifierType {\n        IdentifierType {\n          Name\n        }\n      }\n      IdentifierData {\n        IdentifierValue\n      }\n    }\n    Issuer {\n      ObjectId\n      Names {\n        Name {\n          OrganizationName(filter: {NameTypeCode: {EQ: \"LNG\"}}) {\n            Name\n            LanguageId\n          }\n        }\n      }\n      ClassificationTrbcPrimarySchemaV2 {\n        Industry {\n          Name\n        }\n        Identifier {\n          IndustryId\n          Identifiers(filter: {ValueTypeId: {EQ: \"320159\"}}) {\n            Value\n            ValueTypeCode\n            ValueTypeId\n          }\n        }\n      }\n    }\n    ValuationQuote {\n      ObjectId\n    }\n    AllQuotes(filter: {Reference: {QuoteIsActive: {EQ: true}}}) {\n      ObjectId\n      Reference {\n        QuoteCurrencyId\n        QuoteCountryId\n        QuoteExchangeCode\n      }\n      MarketAttributableSource {\n        Reference {\n          Names(filter: {NameType: {EQ: \"Long Name\"}}) {\n            LanguageId\n            Name\n            NameType\n          }\n        }\n      }\n      QuoteIdentifiers(filter: {OR: [{IdentifierTypeId: {EQ: 320110}}, {IdentifierTypeId: {EQ: 320048}}]}) {\n        IdentifierTypeId\n        IdentifierType {\n          IdentifierType {\n            Name\n          }\n        }\n        IdentifierData {\n          IdentifierEffectiveFrom\n          IdentifierValue\n        }\n      }\n    }\n  }\n}\n",
+  "output_format": "json",
+  "variables_definition": [
+    {
+      "name": "identifierTypeName",
+      "label": "Identifier Type",
+      "type": "List",
+      "description": "Choose Identifier Type",
+      "values": [
+        "Isin",
+        "ValorenNumber",
+        "RIC"
+      ]
+    },
+    {
+      "name": "identifier",
+      "label": "Identifier",
+      "type": "List",
+      "description": "Choose Identifier",
+      "values": [
+        {
+          "Isin": "GB00B0SWJX34"
+        },
+        {
+          "ValorenNumber": "3886335"
+        },
+        {
+          "RIC": "TSLA.O"
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "name": "Query demonstrates how using a list of different identifier types and identifiers",
+      "variables": {
+        "identifierTypeName": "Isin",
+        "identifier": "GB00B0SWJX34"
+      }
+    },
+    {
+      "name": "Find by ValorenNumber",
+      "variables": {
+        "identifierTypeName": "ValorenNumber",
+        "identifier": "3886335"
+      }
+    },
+    {
+      "name": "Find by RIC",
+      "variables": {
+        "identifierTypeName": "RIC",
+        "identifier": "TSLA.O"
+      }
+    }
+  ],
+  "created": "2021-12-22T08:30:18+00:00",
+  "updated": "2022-05-12T18:53:59+03:00",
+  "handlebars_config": ""
+}
